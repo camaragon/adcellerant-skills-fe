@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <header>
-        <h1>Advertsing Statistics</h1>
+        <h1>Advertsing Analytics</h1>
       </header>
       <Form/>
     </>
