@@ -45,6 +45,15 @@ function App() {
     }
   }
 
+  const something = () => {
+    if (form.clicks.includes('-')) {
+      const numbers = form.clicks.split('-');
+      const filtered = data.filter(ad.clicks <= numbers[1] && ad.clicks >= numbers[0]);
+    } else {
+      const filtered = data.filter(ad => ad.clicks >= form.clicks)
+    }
+  }
+
   const filterClicks = (data, form) => {
     switch (form.clicks) {
       case 0:
@@ -66,6 +75,28 @@ function App() {
         filterPlatform(filtered, form);
         break;
     }
+  }
+
+  const filterPlatform = (data, form) => {
+    switch (form.clicks) {
+      case 0:
+        filterProduct(data, form);
+        break;
+      case 1:
+        const filtered = data.filter(ad => ad.clicks >= 100);
+        filterProduct(filtered, form);
+      case 2:
+        const filtered = state.filter(ad => ad.clicks < 100 && ad.clicks >= 75);
+        filterProduct(filtered, form);
+        break;
+      case 3:
+        const filtered = state.filter(ad => ad.clicks < 75 && ad.clicks >= 25);
+        filterProduct(filtered, form);
+        break;
+      case 4:
+        const filtered = state.filter(ad => ad.clicks < 25 && ad.clicks >= 0);
+        filterProduct(filtered, form);
+        break;
   }
 
   return (
