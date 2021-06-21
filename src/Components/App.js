@@ -21,7 +21,7 @@ function App() {
         <p>{new Date().toLocaleString()}</p>
       </header>
       <Form/>
-      <Analytics/>
+      <Analytics data={state}/>
     </>
   );
 }
