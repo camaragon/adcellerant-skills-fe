@@ -3,3 +3,8 @@ section {
     flex-direction: column;
     align-items: center;
 }
+
+table {
+    text-align: center;
+    width: 80%;
+}
