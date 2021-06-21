@@ -2,19 +2,29 @@ import React, { useState } from 'react';
 import '../styles/Form.css';
 
 function Form() {
-    const [impressions, setImpressions] = useState('');
+    const [form, setState] = useState({
+        impressions: '',
+        clicks: '',
+        platform: '',
+        product: '',
+        date: ''
+    });
 
     const handleChange = (event) => {
-        setImpressions(event.target.value);
-    }
+        setState({
+            ...form,
+            [event.target.name]: event.target.value
+        });
+    };
 
+    console.log(form.impressions)
     return (
         <form>
             <h2>Filter Data</h2>
             <div className='filterForm'>
                 <label>
                 Number of impressions: <br></br>
-                    <select value={impressions} name='impressions' onChange={handleChange}>
+                    <select value={form.impressions} name='impressions' onChange={handleChange}>
                         <option value='' selected disbaled hidden>None</option>
                         <option value='grapefruit'>Grapefruit</option>
                         <option value='lime'>Lime</option>
@@ -35,6 +45,16 @@ function Form() {
                 <label>
                 Platform: <br></br>
                     <select name='platform'>
+                        <option value='' selected disbaled hidden>None</option>
+                        <option value='grapefruit'>Grapefruit</option>
+                        <option value='lime'>Lime</option>
+                        <option value='coconut'>Coconut</option>
+                        <option value='mango'>Mango</option>
+                    </select>
+                </label>
+                <label>
+                Product: <br></br>
+                    <select name=''>
                         <option value='' selected disbaled hidden>None</option>
                         <option value='grapefruit'>Grapefruit</option>
                         <option value='lime'>Lime</option>
