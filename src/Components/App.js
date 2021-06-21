@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/App.css';
 import Form from './Form';
+import Analytics from './Analytics';
 import getData from '../fetchRequests';
 
 function App() {
-  const [state, setState] = useState([])
+  const [state, setState] = useState([]);
 
   useEffect(() => {
     getData()
@@ -20,6 +21,7 @@ function App() {
         <p>{new Date().toLocaleString()}</p>
       </header>
       <Form/>
+      <Analytics data={state}/>
     </>
   );
 }
