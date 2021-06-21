@@ -1,0 +1,12 @@
+form {
+    text-align: center;
+}
+
+.filterForm { 
+    display: flex;
+    justify-content: space-around;
+}
+
+.filterSubmit {
+    margin-top: 3%;
+}
