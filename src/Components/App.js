@@ -4,12 +4,15 @@ import Form from './Form';
 import getData from '../fetchRequests';
 
 function App() {
+  const [state, setState] = useState([])
 
   useEffect(() => {
     getData()
-    .then(data => console.log((data)))
+    .then(data => {
+      setState(data);
+    })
   }, [])
-  
+
   return (
     <>
       <header >
