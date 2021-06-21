@@ -10,14 +10,6 @@ function Ad({id, product, date, platform, impressions, clicks}) {
             <td>{impressions}</td>
             <td>{clicks}</td>
         </tr>
-        // <div className='adContainer'>
-        //     <p>{id}</p>
-        //     <p>{product}</p>
-        //     <p>{date}</p>
-        //     <p>{platform}</p>
-        //     <p>{impressions}</p>
-        //     <p>{clicks}</p>
-        // </div>
     )
 }
 
