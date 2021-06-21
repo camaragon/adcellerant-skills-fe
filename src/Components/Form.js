@@ -7,16 +7,22 @@ function Form() {
         impressions: '',
         clicks: '',
         platform: '',
-        product: '',
-        date: ''
+        product: ''
     });
+    const [dateRange, setDateRange] = useState({start: null, end: null})
 
     const handleChange = (event) => {
         setState({
             ...form,
             [event.target.name]: event.target.value
         });
+        setDateRange({
+            ...dateRange,
+            [event.target.name]: event.target.value
+        });
     };
+
+    console.log(dateRange)
 
     return (
         <form>
@@ -62,15 +68,10 @@ function Form() {
                         })}
                     </select>
                 </label>
-                <label>
+                <label for='dateRange'>
                 Date Range: <br></br>
-                    <select name='' onChange={handleChange}>
-                        <option value='' selected disbaled hidden>None</option>
-                        <option value='grapefruit'>Grapefruit</option>
-                        <option value='lime'>Lime</option>
-                        <option value='coconut'>Coconut</option>
-                        <option value='mango'>Mango</option>
-                    </select>
+                    <input type='date' id='dateRange' name='start' value={dateRange.start} min='2021-04-01' max='2021-04-05' onChange={handleChange}></input>
+                    {dateRange.start && <input type='date' id='dateRange' name='end'value='' min='2021-04-01' max='2021-04-05'></input>}
                 </label>
             </div>
         <input className='filterSubmit' type='submit' value='Submit' />
