@@ -22,7 +22,11 @@ function Form() {
         });
     };
 
-    console.log(dateRange)
+    const addDay = (date) => {
+        const result = new Date(date);
+        result.setDate(result.getDate() + 1)
+        return result.toISOString().slice(0, 10);
+    }
 
     return (
         <form>
@@ -68,11 +72,16 @@ function Form() {
                         })}
                     </select>
                 </label>
-                <label for='dateRange'>
-                Date Range: <br></br>
-                    <input type='date' id='dateRange' name='start' value={dateRange.start} min='2021-04-01' max='2021-04-05' onChange={handleChange}></input>
-                    {dateRange.start && <input type='date' id='dateRange' name='end'value='' min='2021-04-01' max='2021-04-05'></input>}
-                </label>
+                <div className='dateRange'>
+                    <p style={{marginTop: 0}}>Date Range:</p>
+                    <label for='startDate'>Start</label>    
+                    <input type='date' id='startDate' name='start' value={dateRange.start} min='2021-04-01' max='2021-04-05' onChange={handleChange}></input>
+                    {dateRange.start && <> 
+                    <label for='endDate'>End</label> 
+                    <input type='date' id='endDate' name='end' value={dateRange.end} min={addDay(dateRange.start)} max='2021-04-05' onChange={handleChange}></input>
+                    </>
+                    }
+                </div>
             </div>
         <input className='filterSubmit' type='submit' value='Submit' />
         </form>
