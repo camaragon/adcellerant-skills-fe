@@ -2,7 +2,7 @@ import '../styles/Analytics.css';
 import Ad from './Ad';
 
 function Analytics({data}) {
-    const advertisingData = data.map(ad => {
+    const advertisingTableData = data.map(ad => {
         return (
             <Ad
                 id={ad.id}
@@ -18,7 +18,11 @@ function Analytics({data}) {
 
     return (
         <section>
-            { advertisingData }
+            <table>
+                <tbody>
+                    { advertisingTableData }
+                </tbody>
+            </table>
         </section>
     )
 }
