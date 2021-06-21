@@ -5,8 +5,9 @@ import Form from './Form';
 function App() {
   return (
     <>
-      <header>
+      <header >
         <h1>Advertsing Analytics</h1>
+        <p>{new Date().toLocaleString()}</p>
       </header>
       <Form/>
     </>
