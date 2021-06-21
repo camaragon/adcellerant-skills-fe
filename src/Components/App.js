@@ -1,8 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/App.css';
 import Form from './Form';
+import getData from '../fetchRequests';
 
 function App() {
+  const [state, setState] = useState([])
+
+  useEffect(() => {
+    getData()
+    .then(data => {
+      setState(data);
+    })
+  }, [])
+
   return (
     <>
       <header >
