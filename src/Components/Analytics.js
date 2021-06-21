@@ -16,10 +16,23 @@ function Analytics({data}) {
         )
     });
 
+    console.log(data[0])
+    const renderTableHeader = () => {
+        if (data.length) {
+            let header = Object.keys(data[0]);
+            return header.map((key, index) => {
+                if (!key.includes('created_at') && !key.includes('updated_at')) {
+                    return <th key={index}>{key.toUpperCase()}</th>
+                }
+            })
+        }
+    }
+
     return (
         <section>
             <table>
                 <tbody>
+                    <tr>{renderTableHeader()}</tr>
                     { advertisingTableData }
                 </tbody>
             </table>
