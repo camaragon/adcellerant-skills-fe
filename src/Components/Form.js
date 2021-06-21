@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/Form.css';
 
-function Form() {
+function Form({filterData}) {
     const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
     const [form, setState] = useState({
         impressions: '',
@@ -28,6 +28,15 @@ function Form() {
         return result.toISOString().slice(0, 10);
     }
 
+    const handleClick = (event) => {
+        event.preventDefault();
+
+        filterData(form)
+        
+    }
+
+    console.log(dateRange)
+
     return (
         <form>
             <h2>Filter Data</h2>
@@ -46,7 +55,7 @@ function Form() {
                 Clicks per product: <br></br>
                     <select value={form.clicks} name='clicks' onChange={handleChange}>
                         <option value='' selected disbaled hidden>None</option>
-                        <option value='100'>100+</option>
+                        <option value='100+'>100+</option>
                         <option value='75-99'>75-99</option>
                         <option value='25-74'>25-74</option>
                         <option value='0-24'>0-24</option>

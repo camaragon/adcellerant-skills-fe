@@ -14,13 +14,17 @@ function App() {
     })
   }, [])
 
+  const filterData = () => {
+
+  }
+
   return (
     <>
       <header >
         <h1>Advertsing Analytics</h1>
         <p>{new Date().toLocaleString()}</p>
       </header>
-      <Form/>
+      <Form filterData={filterData}/>
       <Analytics data={state}/>
     </>
   );
