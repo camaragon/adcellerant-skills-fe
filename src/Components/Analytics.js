@@ -16,7 +16,6 @@ function Analytics({data}) {
         )
     });
 
-    console.log(data[0])
     const renderTableHeader = () => {
         if (data.length) {
             let header = Object.keys(data[0]);
@@ -30,6 +29,7 @@ function Analytics({data}) {
 
     return (
         <section>
+            <h2 className='tableTitle'>Advertising Data Table</h2>
             <table>
                 <tbody>
                     <tr>{renderTableHeader()}</tr>
