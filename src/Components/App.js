@@ -4,18 +4,25 @@ import Form from './Form';
 import Analytics from './Analytics';
 import Charts from './Charts';
 import getData from '../fetchRequests';
-import filterData from '../calculations';
 import { Route, Link } from 'react-router-dom';
+import {filterData, findImpresByPlat, findClicksByPlat, findImpresByProd, findClicksByProd} from '../calculations';
 
 function App() {
   const [state, setState] = useState([]);
-  const [filtered, setFiltered] = useState(false)
+  const [filtered, setFiltered] = useState(false);
+  const [chartData, setChartData] = useState({});
 
   useEffect(() => {
     getData()
     .then(data => {
       setState(data);
-    })
+      setChartData({
+        impresByPlat: findImpresByPlat(data),
+        clicksByPlat: findClicksByPlat(data),
+        impresByProd: findImpresByProd(data),
+        clicksByProd: findClicksByProd(data)
+        }); 
+    });
   }, [])
 
   const updateData = (form) => {
@@ -55,7 +62,7 @@ function App() {
           </>
         )
       }}/>
-      <Route exact path='/charts' render={() => <Charts/>}/>
+      <Route exact path='/charts' render={() => <Charts chartData={chartData}/>}/>
     </>
   );
 }
