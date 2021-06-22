@@ -19,7 +19,7 @@ function App() {
       setChartData({
         impresByPlat: findImpresByPlat(data),
         clicksByPlat: findClicksByPlat(data),
-        impressByProd: findImpresByProd(data),
+        impresByProd: findImpresByProd(data),
         clicksByProd: findClicksByProd(data)
         }); 
     });
