@@ -76,9 +76,16 @@ function App() {
     // }
   }
 
-  const filterPlatform = () => {
-    
+  const filterPlatform = (data, form) => {
+    if (form.platform === '') {
+      filterProduct(state, form);
+    } else {
+      const filtered = data.filter(ad => ad.platform === form.platform);
+      filterProduct(filtered, form);
+    }
   }
+
+  
 
   // const filterPlatform = (data, form) => {
   //   switch (form.clicks) {
