@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../styles/App.css';
 import Form from './Form';
 import Analytics from './Analytics';
+import Charts from './Charts';
 import getData from '../fetchRequests';
 import filterData from '../calculations';
 import { Route, Link } from 'react-router-dom';
@@ -54,7 +55,7 @@ function App() {
           </>
         )
       }}/>
-      <Route exact path='/charts' render={() => <></>}/>
+      <Route exact path='/charts' render={() => <Charts/>}/>
     </>
   );
 }
