@@ -6,32 +6,38 @@ import {findImpresByPlat, findClicksByPlat, findImpresByProd, findClicksByProd} 
 
 function Charts({chartData}) {
     return (
-        <div>
-            <Pie
-                data={{
-                    labels: Object.keys(chartData.impresByPlat),
-                    datasets: [{
-                        data: Object.values(chartData.impresByPlat),
-                        backgroundColor: ['red', 'blue', 'green', 'yellow', 'orange']
-                    }]
-                }}
-                height='600'
-                width='600'
-                options={{ responsive: false, maintainAspectRatio: false }}
-            />
-            <Pie
-                data={{
-                    labels: [1, 2, 3],
-                    datasets: [{
-                        data: [2000, 4000, 2850],
-                        backgroundColor: ['red', 'blue', 'green', 'yellow', 'orange']
-                    }]
-                }}
-                // height='600'
-                // width='600'
-                options={{ responsive: true, maintainAspectRatio: true }}
-            />
-        </div>
+        <section className='chart-section'>
+            <div className='chart-container'>
+                <h2>Impressions by Platform</h2>
+                <Pie
+                    data={{
+                        labels: Object.keys(chartData.impresByPlat),
+                        datasets: [{
+                            data: Object.values(chartData.impresByPlat),
+                            backgroundColor: ['red', 'blue', 'green', 'yellow', 'orange']
+                        }]
+                    }}
+                    height='500'
+                    width='500'
+                    options={{ responsive: false, maintainAspectRatio: false }}
+                />
+            </div>
+            <div className='chart-container'>
+                <h2>Clicks by Platform</h2>
+                <Pie
+                    data={{
+                        labels: Object.keys(chartData.clicksByPlat),
+                        datasets: [{
+                            data: Object.values(chartData.clicksByPlat),
+                            backgroundColor: ['red', 'blue', 'green', 'yellow', 'orange']
+                        }]
+                    }}
+                    height='500'
+                    width='500'
+                    options={{ responsive: false, maintainAspectRatio: false }}
+                />
+            </div>
+        </section>
     )
 };
 
