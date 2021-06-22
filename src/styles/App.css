@@ -13,3 +13,12 @@ header {
 
 .filterReset {
 }
+
+.pages {
+  display: flex;
+}
+
+img {
+  height: 30px;
+  width: 30px;
+}
