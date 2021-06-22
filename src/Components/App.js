@@ -6,16 +6,24 @@ import Charts from './Charts';
 import getData from '../fetchRequests';
 import {filterData, displayCharts} from '../calculations';
 import { Route, Link } from 'react-router-dom';
+import {findImpresByPlat, findClicksByPlat, findImpresByProd, findClicksByProd} from '../calculations';
 
 function App() {
   const [state, setState] = useState([]);
-  const [filtered, setFiltered] = useState(false)
+  const [filtered, setFiltered] = useState(false);
+  const [chartData, setChartData] = useState({});
 
   useEffect(() => {
     getData()
     .then(data => {
       setState(data);
       displayCharts(data);
+      setChartData({
+        impresByPlat: findImpresByPlat(data),
+        clicksByPlat: findClicksByPlat(data),
+        impressByProd: findImpresByProd(data),
+        clicksByProd: findClicksByProd(data)
+        }); 
     });
   }, [])
 
@@ -56,7 +64,7 @@ function App() {
           </>
         )
       }}/>
-      <Route exact path='/charts' render={() => <Charts/>}/>
+      <Route exact path='/charts' render={() => <Charts chartData={chartData}/>}/>
     </>
   );
 }
