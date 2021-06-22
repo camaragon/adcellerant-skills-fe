@@ -16,10 +16,11 @@ header {
 
 .pages {
   height: 80px;
-  width: 100px;
+  width: 150px;
   display: flex;
   align-items:flex-end;
   justify-content: space-evenly;
+  margin-right: 10%;
 }
 
 img {
