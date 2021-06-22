@@ -4,9 +4,8 @@ import Form from './Form';
 import Analytics from './Analytics';
 import Charts from './Charts';
 import getData from '../fetchRequests';
-import {filterData, displayCharts} from '../calculations';
 import { Route, Link } from 'react-router-dom';
-import {findImpresByPlat, findClicksByPlat, findImpresByProd, findClicksByProd} from '../calculations';
+import {filterData, findImpresByPlat, findClicksByPlat, findImpresByProd, findClicksByProd} from '../calculations';
 
 function App() {
   const [state, setState] = useState([]);
@@ -17,7 +16,6 @@ function App() {
     getData()
     .then(data => {
       setState(data);
-      displayCharts(data);
       setChartData({
         impresByPlat: findImpresByPlat(data),
         clicksByPlat: findClicksByPlat(data),
