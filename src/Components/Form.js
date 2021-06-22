@@ -97,7 +97,7 @@ function Form({updateData}) {
                     }
                 </div>
             </div>
-        <input className='filterSubmit' type='submit' value='Submit' onSubmit={handleClick}/>
+        <button className='filterSubmit' onClick={handleClick}>Submit</button>
         </form>
     )
 }
