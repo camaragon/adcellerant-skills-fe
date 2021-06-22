@@ -109,16 +109,16 @@ const findImpresByProd = (data) => {
   }, {})
 }
 
-// const findClicksByProd = (data) => {
-//   return data.reduce((sum, ad) => {
-//     if (!sum[ad.product]) {
-//       sum[ad.product] = ad.clicks;
-//     } else {
-//       sum[ad.product] += ad.clicks;
-//     }
-//     console.log(sum)
-//     return sum;
-//   }, {})
-// }
+const findClicksByProd = (data) => {
+  return data.reduce((sum, ad) => {
+    if (!sum[ad.product]) {
+      sum[ad.product] = ad.clicks;
+    } else {
+      sum[ad.product] += ad.clicks;
+    }
+    console.log(sum)
+    return sum;
+  }, {})
+}
 
 export {filterData, displayCharts};
