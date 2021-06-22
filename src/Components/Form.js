@@ -4,7 +4,7 @@ import '../styles/Form.css';
 function Form({filterData}) {
     const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
     const [form, setState] = useState({
-        impressions: 0,
+        impressions: '',
         clicks: '',
         platform: '',
         product: ''
@@ -45,17 +45,17 @@ function Form({filterData}) {
                 Number of impressions: <br></br>
                     <select value={form.impressions} name='impressions' onChange={handleChange}>
                         <option value='' selected disbaled hidden>None</option>
-                        <option value={1}>700+</option>
-                        <option value={2}>400-699</option>
-                        <option value={3}>100-399</option>
-                        <option value={4}>0-99</option>
+                        <option value='700'>700+</option>
+                        <option value='400-699'>400-699</option>
+                        <option value='100-399'>100-399</option>
+                        <option value='0-99'>0-99</option>
                     </select>
                 </label>
                 <label>
                 Clicks per product: <br></br>
                     <select value={form.clicks} name='clicks' onChange={handleChange}>
                         <option value='' selected disbaled hidden>None</option>
-                        <option value='100+'>100+</option>
+                        <option value='100'>100+</option>
                         <option value='75-99'>75-99</option>
                         <option value='25-74'>25-74</option>
                         <option value='0-24'>0-24</option>
