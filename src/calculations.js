@@ -67,15 +67,15 @@ const filterDateRange = (data, form) => {
 
 // CHART FUNCTIONALITY //
 const displayCharts = (data) => {
-  // findImpresByPlat(data)
-  // findClicksByPlat(data)
+  // findImpresByPlat(data);
+  // findClicksByPlat(data);
   // findImpresByProd(data);
   // findClicksByProd(data);
   // pass state into each funtion that represents one of the 4 charts
 }
 
 const findImpresByPlat =(data) => {
-  return data.reduce((sum, ad) => {
+  const result = data.reduce((sum, ad) => {
     if (!sum[ad.platform]) {
       sum[ad.platform] = ad.impressions;
     } else {
@@ -83,6 +83,10 @@ const findImpresByPlat =(data) => {
     }
     return sum;
   }, {})
+  return result = {
+    labels: Object.keys(result),
+    values: Object.values(sum)
+  }
 }
 
 const findClicksByPlat = (data) => {
@@ -92,7 +96,6 @@ const findClicksByPlat = (data) => {
     } else {
       sum[ad.platform] += ad.clicks;
     }
-    console.log(sum)
     return sum;
   }, {})
 }
@@ -104,7 +107,6 @@ const findImpresByProd = (data) => {
     } else {
       sum[ad.product] += ad.impressions;
     }
-    console.log(sum)
     return sum;
   }, {})
 }
@@ -116,9 +118,15 @@ const findClicksByProd = (data) => {
     } else {
       sum[ad.product] += ad.clicks;
     }
-    console.log(sum)
     return sum;
   }, {})
 }
 
-export {filterData, displayCharts};
+export {
+  filterData, 
+  displayCharts,
+  findImpresByPlat,
+  findClicksByPlat,
+  findImpresByProd,
+  findClicksByProd
+};
