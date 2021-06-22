@@ -17,61 +17,77 @@ const filterImpressions = (state, form) => {
     }
   };
 
-  const filterClicks = (data, form) => {
-    if (form.clicks === '') {
-      return filterPlatform(data, form);
-    } else if (form.clicks.includes('-')) {
-      const range = form.clicks.split('-');
-      const filtered = data.filter(ad => ad.clicks <= range[1] && ad.clicks >= range[0]);
-      return filterPlatform(filtered, form);
-    } else {
-      const filtered = data.filter(ad => ad.clicks >= form.clicks)
-      return filterPlatform(filtered, form);
-    }
-  };
-
-  const filterPlatform = (data, form) => {
-    if (form.platform === '') {
-      return filterProduct(data, form);
-    } else {
-      const filtered = data.filter(ad => ad.platform === form.platform);
-      return filterProduct(filtered, form);
-    }
-  };
-
-  const filterProduct = (data, form) => {
-    if (form.product === '') {
-      return filterDateRange(data, form);
-    } else {
-      const filtered = data.filter(ad => ad.product === form.product);
-      return filterDateRange(filtered, form);
-    }
-  };
-
-  const filterDateRange = (data, form) => {
-    if (form.start === '') {
-      return data;
-    } else if (form.end === '') {
-      const filtered = data.filter(ad => ad.date === form.start);
-      return filtered;
-    } else {
-      const start = Date.parse(form.start);
-      const end = Date.parse(form.end);
-      const filtered = data.filter(ad => {
-        let date = Date.parse(ad.date);
-        return (date >= start && date <= end)
-      })
-      return filtered;
-    }
-  };
-
-  // CHART FUNCTIONALITY //
-  const displayCharts = (data) => {
-    findImpresByPlat()
-    findClicksByPlat()
-    findImpresByProd()
-    findClicksByProd()
-    // pass state into each funtion that represents one of the 4 charts
+const filterClicks = (data, form) => {
+  if (form.clicks === '') {
+    return filterPlatform(data, form);
+  } else if (form.clicks.includes('-')) {
+    const range = form.clicks.split('-');
+    const filtered = data.filter(ad => ad.clicks <= range[1] && ad.clicks >= range[0]);
+    return filterPlatform(filtered, form);
+  } else {
+    const filtered = data.filter(ad => ad.clicks >= form.clicks)
+    return filterPlatform(filtered, form);
   }
+};
 
-  export {filterData, displayCharts};
+const filterPlatform = (data, form) => {
+  if (form.platform === '') {
+    return filterProduct(data, form);
+  } else {
+    const filtered = data.filter(ad => ad.platform === form.platform);
+    return filterProduct(filtered, form);
+  }
+};
+
+const filterProduct = (data, form) => {
+  if (form.product === '') {
+    return filterDateRange(data, form);
+  } else {
+    const filtered = data.filter(ad => ad.product === form.product);
+    return filterDateRange(filtered, form);
+  }
+};
+
+const filterDateRange = (data, form) => {
+  if (form.start === '') {
+    return data;
+  } else if (form.end === '') {
+    const filtered = data.filter(ad => ad.date === form.start);
+    return filtered;
+  } else {
+    const start = Date.parse(form.start);
+    const end = Date.parse(form.end);
+    const filtered = data.filter(ad => {
+      let date = Date.parse(ad.date);
+      return (date >= start && date <= end)
+    })
+    return filtered;
+  }
+};
+
+// CHART FUNCTIONALITY //
+const displayCharts = (data) => {
+  // findImpresByPlat(data)
+  // findClicksByPlat()
+  // findImpresByProd()
+  // findClicksByProd()
+  // pass state into each funtion that represents one of the 4 charts
+}
+
+const findImpresByPlat =(data) => {
+  return data.reduce((acc, ad) => {
+    if (!acc[ad.platform]) {
+      acc[ad.platform] = ad.impressions;
+    } else {
+      acc[ad.platform] += ad.impressions;
+    }
+    console.log(acc)
+    return acc;
+  }, {})
+  // input; array of objects (data)
+  // output: Object with key of platform and values of impressions
+  // method: reduce 
+}
+
+
+export {filterData, displayCharts};
