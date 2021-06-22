@@ -49,7 +49,7 @@ function Form({updateData}) {
                 <label>
                 Number of impressions: <br></br>
                     <select value={form.impressions} name='impressions' onChange={handleChange}>
-                        <option value='' selected disbaled hidden>None</option>
+                        <option value=''>None</option>
                         <option value='700'>700+</option>
                         <option value='400-699'>400-699</option>
                         <option value='100-399'>100-399</option>
@@ -59,7 +59,7 @@ function Form({updateData}) {
                 <label>
                 Clicks per product: <br></br>
                     <select value={form.clicks} name='clicks' onChange={handleChange}>
-                        <option value='' selected disbaled hidden>None</option>
+                        <option value=''>None</option>
                         <option value='100'>100+</option>
                         <option value='75-99'>75-99</option>
                         <option value='25-74'>25-74</option>
@@ -69,7 +69,7 @@ function Form({updateData}) {
                 <label>
                 Platform: <br></br>
                     <select value={form.platform} name='platform' onChange={handleChange}>
-                        <option value='' selected disbaled hidden>None</option>
+                        <option value=''>None</option>
                         <option value='Amazon'>Amazon</option>
                         <option value='Facebook'>Facebook</option>
                         <option value='Google'>Google</option>
@@ -80,7 +80,7 @@ function Form({updateData}) {
                 <label>
                 Product: <br></br>
                     <select value={form.product} name='product' onChange={handleChange}>
-                        <option value='' selected disbaled hidden>None</option>
+                        <option value=''>None</option>
                         {alphabet.map(letter => {
                             return <option value={letter}>{letter}</option>
                         })}
