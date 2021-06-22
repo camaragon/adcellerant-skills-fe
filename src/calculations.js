@@ -97,17 +97,17 @@ const findClicksByPlat = (data) => {
   }, {})
 }
 
-// const findImpresByProd = (data) => {
-//   return data.reduce((sum, ad) => {
-//     if (!sum[ad.product]) {
-//       sum[ad.product] = ad.impressions;
-//     } else {
-//       sum[ad.product] += ad.impressions;
-//     }
-//     console.log(sum)
-//     return sum;
-//   }, {})
-// }
+const findImpresByProd = (data) => {
+  return data.reduce((sum, ad) => {
+    if (!sum[ad.product]) {
+      sum[ad.product] = ad.impressions;
+    } else {
+      sum[ad.product] += ad.impressions;
+    }
+    console.log(sum)
+    return sum;
+  }, {})
+}
 
 // const findClicksByProd = (data) => {
 //   return data.reduce((sum, ad) => {
