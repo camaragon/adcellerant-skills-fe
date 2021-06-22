@@ -68,26 +68,57 @@ const filterDateRange = (data, form) => {
 // CHART FUNCTIONALITY //
 const displayCharts = (data) => {
   // findImpresByPlat(data)
-  // findClicksByPlat()
-  // findImpresByProd()
-  // findClicksByProd()
+  // findClicksByPlat(data)
+  // findImpresByProd(data);
+  // findClicksByProd(data);
   // pass state into each funtion that represents one of the 4 charts
 }
 
 const findImpresByPlat =(data) => {
-  return data.reduce((acc, ad) => {
-    if (!acc[ad.platform]) {
-      acc[ad.platform] = ad.impressions;
+  return data.reduce((sum, ad) => {
+    if (!sum[ad.platform]) {
+      sum[ad.platform] = ad.impressions;
     } else {
-      acc[ad.platform] += ad.impressions;
+      sum[ad.platform] += ad.impressions;
     }
-    console.log(acc)
-    return acc;
+    return sum;
   }, {})
-  // input; array of objects (data)
-  // output: Object with key of platform and values of impressions
-  // method: reduce 
 }
 
+const findClicksByPlat = (data) => {
+  return data.reduce((sum, ad) => {
+    if (!sum[ad.platform]) {
+      sum[ad.platform] = ad.clicks;
+    } else {
+      sum[ad.platform] += ad.clicks;
+    }
+    console.log(sum)
+    return sum;
+  }, {})
+}
+
+// const findImpresByProd = (data) => {
+//   return data.reduce((sum, ad) => {
+//     if (!sum[ad.product]) {
+//       sum[ad.product] = ad.impressions;
+//     } else {
+//       sum[ad.product] += ad.impressions;
+//     }
+//     console.log(sum)
+//     return sum;
+//   }, {})
+// }
+
+// const findClicksByProd = (data) => {
+//   return data.reduce((sum, ad) => {
+//     if (!sum[ad.product]) {
+//       sum[ad.product] = ad.clicks;
+//     } else {
+//       sum[ad.product] += ad.clicks;
+//     }
+//     console.log(sum)
+//     return sum;
+//   }, {})
+// }
 
 export {filterData, displayCharts};
