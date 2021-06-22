@@ -14,19 +14,26 @@ function App() {
     })
   }, [])
 
-  const updateData = (form) => {
+  const updateData = (form, dateRange) => {
+    const filtered = filterImpressions(form);
+    const result = filterDateRange(filtered, dateRange)
     filterImpressions(form);
 
     // pass each filtered data set to each helper function until the 
     // resulting data can be set to state
   }
 
+  // const filterData = () => {
+  //   const filtered = filterImpressions();
+  //   fil
+  // }
+
   const filterImpressions = (form) => {
     if (form.impressions === '') {
       filterClicks(state, form);
     } else if (form.impressions.includes('-')) {
       const range = form.impressions.split('-');
-      const filtered = state.filter(ad.impressions <= range[1] && ad.impressions >= range[0]);
+      const filtered = state.filter(ad => ad.impressions <= range[1] && ad.impressions >= range[0]);
       filterClicks(filtered, form);
     } else {
       const filtered = state.filter(ad => ad.impressions >= form.impressions)
@@ -48,7 +55,7 @@ function App() {
       filterPlatform(state, form);
     } else if (form.clicks.includes('-')) {
       const range = form.clicks.split('-');
-      const filtered = data.filter(ad.clicks <= range[1] && ad.clicks >= range[0]);
+      const filtered = data.filter(ad => ad.clicks <= range[1] && ad.clicks >= range[0]);
       filterPlatform(filtered, form);
     } else {
       const filtered = data.filter(ad => ad.clicks >= form.clicks)
@@ -94,27 +101,20 @@ function App() {
     }
   }
 
-  // const filterPlatform = (data, form) => {
-  //   switch (form.clicks) {
-  //     case 0:
-  //       filterProduct(data, form);
-  //       break;
-  //     case 1:
-  //       const filtered = data.filter(ad => ad.clicks >= 100);
-  //       filterProduct(filtered, form);
-  //     case 2:
-  //       const filtered = state.filter(ad => ad.clicks < 100 && ad.clicks >= 75);
-  //       filterProduct(filtered, form);
-  //       break;
-  //     case 3:
-  //       const filtered = state.filter(ad => ad.clicks < 75 && ad.clicks >= 25);
-  //       filterProduct(filtered, form);
-  //       break;
-  //     case 4:
-  //       const filtered = state.filter(ad => ad.clicks < 25 && ad.clicks >= 0);
-  //       filterProduct(filtered, form);
-  //       break;
-  // }
+  const filterDateRange = (data, dateRange) => {
+    if (!dateRange.end) {
+      const filtered = data.filter(ad => ad.date === dateRange.start);
+      return filtered;
+    } else {
+      let start = Date.parse(dateRange.start);
+      let end = Date.parse(dateRange.end);
+      const filtered = data.filter(ad => {
+        let date = Date.parse(ad.date);
+        return (date >= start && date <= end)
+      })
+      return filtered;
+    }
+  }
 
   return (
     <>
@@ -122,7 +122,7 @@ function App() {
         <h1>Advertsing Analytics</h1>
         <p>{new Date().toLocaleString()}</p>
       </header>
-      <Form filterData={filterData}/>
+      <Form updateData={updateData}/>
       <Analytics data={state}/>
     </>
   );
