@@ -29,13 +29,17 @@ function Analytics({data}) {
 
     return (
         <section>
-            <h2 className='tableTitle'>Advertising Data Table</h2>
-            <table>
-                <tbody>
-                    <tr>{renderTableHeader()}</tr>
-                    { advertisingTableData }
-                </tbody>
-            </table>
+            {data.length > 0 ? 
+            <>
+                <h2 className='tableTitle'>Advertising Data Table</h2>
+                <table>
+                    <tbody>
+                        <tr>{renderTableHeader()}</tr>
+                        { advertisingTableData }
+                    </tbody>
+                </table>
+            </> :
+            <h2>No Results Found</h2>}
         </section>
     )
 }

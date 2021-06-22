@@ -4,3 +4,12 @@ header {
   justify-content: space-around;
   border-bottom: 2px solid black;
 }
+
+.postFilter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filterReset {
+}

@@ -10,3 +10,8 @@ form {
 .filterSubmit {
     margin-top: 3%;
 }
+
+.dateRange {
+    display: flex;
+    flex-direction: column;
+}
