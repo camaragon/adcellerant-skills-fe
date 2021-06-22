@@ -14,11 +14,10 @@ function App() {
     })
   }, [])
 
-  const updateData = (form, dateRange) => {
-    const filtered = filterImpressions(form);
-    const result = filterDateRange(filtered, dateRange)
-    filterImpressions(form);
-
+  const updateData = (form) => {
+    const result = filterImpressions(form);
+    console.log('hello')
+    setState(result);
     // pass each filtered data set to each helper function until the 
     // resulting data can be set to state
   }
@@ -52,7 +51,7 @@ function App() {
 
   const filterClicks = (data, form) => {
     if (form.clicks === '') {
-      filterPlatform(state, form);
+      filterPlatform(data, form);
     } else if (form.clicks.includes('-')) {
       const range = form.clicks.split('-');
       const filtered = data.filter(ad => ad.clicks <= range[1] && ad.clicks >= range[0]);
@@ -61,31 +60,11 @@ function App() {
       const filtered = data.filter(ad => ad.clicks >= form.clicks)
       filterPlatform(filtered, form);
     }
-    // switch (form.clicks) {
-    //   case 0:
-    //     filterPlatform(data, form);
-    //     break;
-    //   case 1:
-    //     const filtered = data.filter(ad => ad.clicks >= 100);
-    //     filterPlatform(filtered, form);
-    //   case 2:
-    //     const filtered = state.filter(ad => ad.clicks < 100 && ad.clicks >= 75);
-    //     filterPlatform(filtered, form);
-    //     break;
-    //   case 3:
-    //     const filtered = state.filter(ad => ad.clicks < 75 && ad.clicks >= 25);
-    //     filterPlatform(filtered, form);
-    //     break;
-    //   case 4:
-    //     const filtered = state.filter(ad => ad.clicks < 25 && ad.clicks >= 0);
-    //     filterPlatform(filtered, form);
-    //     break;
-    // }
   }
 
   const filterPlatform = (data, form) => {
     if (form.platform === '') {
-      filterProduct(state, form);
+      filterProduct(data, form);
     } else {
       const filtered = data.filter(ad => ad.platform === form.platform);
       filterProduct(filtered, form);
@@ -94,20 +73,22 @@ function App() {
 
   const filterProduct = (data, form) => {
     if (form.product === '') {
-      filterDateRange(state, form);
+      filterDateRange(data, form);
     } else {
       const filtered = data.filter(ad => ad.product === form.product);
-      filterDateRange(filtered, form);
+      filterDateRange(data, form);
     }
   }
 
-  const filterDateRange = (data, dateRange) => {
-    if (!dateRange.end) {
-      const filtered = data.filter(ad => ad.date === dateRange.start);
+  const filterDateRange = (data, form) => {
+    if (form.start === '') {
+      return data;
+    } else if (form.end === '') {
+      const filtered = data.filter(ad => ad.date === form.start);
       return filtered;
     } else {
-      let start = Date.parse(dateRange.start);
-      let end = Date.parse(dateRange.end);
+      const start = Date.parse(form.start);
+      const end = Date.parse(form.end);
       const filtered = data.filter(ad => {
         let date = Date.parse(ad.date);
         return (date >= start && date <= end)
