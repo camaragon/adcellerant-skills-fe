@@ -4,7 +4,7 @@ import Form from './Form';
 import Analytics from './Analytics';
 import Charts from './Charts';
 import getData from '../fetchRequests';
-import filterData from '../calculations';
+import {filterData, displayCharts} from '../calculations';
 import { Route, Link } from 'react-router-dom';
 
 function App() {
@@ -15,7 +15,8 @@ function App() {
     getData()
     .then(data => {
       setState(data);
-    })
+      displayCharts(data);
+    });
   }, [])
 
   const updateData = (form) => {

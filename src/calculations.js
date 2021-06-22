@@ -65,4 +65,13 @@ const filterImpressions = (state, form) => {
     }
   };
 
-  export default filterData;
+  // CHART FUNCTIONALITY //
+  const displayCharts = (data) => {
+    findImpresByPlat()
+    findClicksByPlat()
+    findImpresByProd()
+    findClicksByProd()
+    // pass state into each funtion that represents one of the 4 charts
+  }
+
+  export {filterData, displayCharts};
