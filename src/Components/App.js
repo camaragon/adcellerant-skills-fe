@@ -85,7 +85,14 @@ function App() {
     }
   }
 
-  
+  const filterProduct = (data, form) => {
+    if (form.product === '') {
+      filterDateRange(state, form);
+    } else {
+      const filtered = data.filter(ad => ad.product === form.product);
+      filterDateRange(filtered, form);
+    }
+  }
 
   // const filterPlatform = (data, form) => {
   //   switch (form.clicks) {
