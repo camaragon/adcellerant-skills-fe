@@ -31,7 +31,7 @@ function Analytics({data}) {
         <section>
             {data.length > 0 ? 
             <>
-                <h2 className='tableTitle'>Analytics Table</h2>
+                <h2 className='table-title'>Analytics Table</h2>
                 <table>
                     <tbody>
                         <tr>{renderTableHeader()}</tr>

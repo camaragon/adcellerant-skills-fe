@@ -11,20 +11,12 @@ function Form({updateData}) {
         start: '',
         end: ''
     });
-    // const [dateRange, setDateRange] = useState({
-    //     start: '', 
-    //     end: ''
-    // })
 
     const handleChange = (event) => {
         setState({
             ...form,
             [event.target.name]: event.target.value
         });
-        // setDateRange({
-        //     ...dateRange,
-        //     [event.target.name]: event.target.value
-        // });
     };
 
     const addDay = (date) => {
@@ -35,12 +27,8 @@ function Form({updateData}) {
 
     const handleClick = (event) => {
         event.preventDefault();
-
         updateData(form) 
     }
-
-    // console.log(dateRange)
-    console.log(form)
 
     return (
         <form>
@@ -86,18 +74,36 @@ function Form({updateData}) {
                         })}
                     </select>
                 </label>
-                <div className='dateRange'>
+                <div className='date-range'>
                     <p style={{marginTop: 0, marginBottom: '5%'}}>Date Range:</p>
                     <label for='startDate'>Start</label>    
-                    <input type='date' id='startDate' name='start' value={form.start} min='2021-04-01' max='2021-04-05' onChange={handleChange}></input>
-                    {form.start.length > 0 && <> 
+                    <input 
+                    type='date' 
+                    id='startDate' 
+                    name='start' 
+                    value={form.start} 
+                    min='2021-04-01' 
+                    max='2021-04-05' 
+                    onChange={handleChange}
+                    >
+                    </input>
+                    {form.start.length > 0 && 
+                    <> 
                     <label for='endDate'>End</label> 
-                    <input type='date' id='endDate' name='end' value={form.end} min={addDay(form.start)} max='2021-04-05' onChange={handleChange}></input>
-                    </>
-                    }
+                    <input 
+                    type='date' 
+                    id='endDate' 
+                    name='end' 
+                    value={form.end} 
+                    min={addDay(form.start)} 
+                    max='2021-04-05' 
+                    onChange={handleChange}
+                    >
+                    </input>
+                    </>}
                 </div>
             </div>
-        <button className='filterSubmit' onClick={handleClick}>Submit</button>
+            <button className='filter-submit' onClick={handleClick}>Submit</button>
         </form>
     )
 }

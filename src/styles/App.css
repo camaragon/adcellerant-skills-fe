@@ -5,7 +5,7 @@ header {
   border-bottom: 2px solid black;
 }
 
-.postFilter {
+.post-filter {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +15,7 @@ h3 {
   border-bottom: 3px solid #FA6700
 }
 
-.filterReset {
+.filter-reset {
   border-radius: 5px;
   background-color: #FA6700;
   padding: 15px;
@@ -24,7 +24,7 @@ h3 {
   border: none;
 }
 
-.filterReset:hover {
+.filter-reset:hover {
   background-color: #fab761;
   cursor: pointer;
 }
@@ -42,5 +42,4 @@ h3 {
 img {
   height: 30px;
   width: 30px;
-  /* margin-right: 50%; */
 }

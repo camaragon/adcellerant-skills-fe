@@ -54,9 +54,9 @@ function App() {
         return (
           <>
             {!filtered ? <Form updateData={updateData} /> : 
-            <div className='postFilter'>
+            <div className='post-filter'>
               <h3>{state.length} Results</h3>
-              <button className='filterReset' onClick={resetFilter}>Reset Filter</button>
+              <button className='filter-reset' onClick={resetFilter}>Reset Filter</button>
             </div>}
             <Analytics data={state}/>
           </>
