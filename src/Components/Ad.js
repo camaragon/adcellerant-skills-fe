@@ -11,6 +11,6 @@ function Ad({id, product, date, platform, impressions, clicks}) {
             <td>{clicks}</td>
         </tr>
     )
-}
+};
 
 export default Ad;

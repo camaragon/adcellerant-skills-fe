@@ -1,17 +1,43 @@
 form {
-    text-align: center;
-}
-
-.filterForm { 
-    display: flex;
-    justify-content: space-around;
-}
-
-.filterSubmit {
-    margin-top: 3%;
-}
-
-.dateRange {
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+select {
+    margin-top: 3px;
+}
+
+input {
+    margin-bottom: 3px;
+}
+
+.filter-form { 
+    display: flex;
+    justify-content: space-around;
+    width: 90%
+}
+
+.filter-submit {
+    margin-top: 3%;
+    border-radius: 5px;
+    background-color: #FA6700;
+    padding: 15px;
+    color: #fff;
+    text-align: center;
+    border: none;
+}
+
+.filter-submit:hover {
+    background-color: #fab761;
+    cursor: pointer;
+}
+
+.date-range {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-title {
+    border-bottom: 6px solid #FA6700;
 }

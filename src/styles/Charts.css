@@ -1,3 +1,22 @@
+header {
+    background-color: black;
+}
+
+header * {
+    font-family: 'Montserrat',sans-serif;
+    color: white;
+}
+
+.display-buttons {
+    border: 2px solid #fff !important;
+    padding: 8px;
+}
+
+.display-buttons:hover {
+    background-color: white;
+    color: black;
+}
+
 .chart-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -7,4 +26,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 5%;
 }
+
+
+

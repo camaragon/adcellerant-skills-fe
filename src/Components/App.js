@@ -42,11 +42,11 @@ function App() {
 
   return (
     <>
-      <header >
+      <header>
         <h1>Advertsing Analytics</h1>
          <div className='pages'>
-           <Link to={'/'}><img src='https://cdn4.iconfinder.com/data/icons/flat-pro-database-set-3/32/table-512.png'/></Link>
-           <Link to={'/charts'}><img src='https://w7.pngwing.com/pngs/151/662/png-transparent-pie-chart-diagram-computer-icons-circle-graph-angle-text-orange-thumbnail.png'/></Link>
+           <Link to={'/'} style={{textDecoration: 'none'}}><p className='display-buttons'>Table</p></Link>
+           <Link to={'/charts'} style={{textDecoration: 'none'}}><p className='display-buttons'>Chart</p></Link>
          </div>
         <p>{new Date().toLocaleString()}</p>
       </header>
@@ -54,9 +54,9 @@ function App() {
         return (
           <>
             {!filtered ? <Form updateData={updateData} /> : 
-            <div className='postFilter'>
+            <div className='post-filter'>
               <h3>{state.length} Results</h3>
-              <button className='filterReset' onClick={resetFilter}>Reset Filter</button>
+              <button className='filter-reset' onClick={resetFilter}>Reset Filter</button>
             </div>}
             <Analytics data={state}/>
           </>

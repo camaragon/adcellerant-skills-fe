@@ -18,7 +18,7 @@ function Charts({chartData}) {
         '#ffa500', 
         '#ff2500'
     ];
-    
+
     return (
         <section className='chart-section'>
             <div className='chart-container'>
@@ -66,7 +66,7 @@ function Charts({chartData}) {
                     options={{ responsive: false, maintainAspectRatio: false, plugins: { legend: { display: false}}}}
                 />
             </div>
-            <div className='chart-container'>
+            <div className='chart-container' >
                 <h2>Clicks by Product</h2>
                 <Bar
                     data={{

@@ -11,43 +11,31 @@ function Form({updateData}) {
         start: '',
         end: ''
     });
-    // const [dateRange, setDateRange] = useState({
-    //     start: '', 
-    //     end: ''
-    // })
 
     const handleChange = (event) => {
         setState({
             ...form,
             [event.target.name]: event.target.value
         });
-        // setDateRange({
-        //     ...dateRange,
-        //     [event.target.name]: event.target.value
-        // });
     };
 
     const addDay = (date) => {
         const result = new Date(date);
         result.setDate(result.getDate() + 1)
         return result.toISOString().slice(0, 10);
-    }
+    };
 
     const handleClick = (event) => {
         event.preventDefault();
-
         updateData(form) 
-    }
-
-    // console.log(dateRange)
-    console.log(form)
+    };
 
     return (
         <form>
-            <h2>Filter Data</h2>
-            <div className='filterForm'>
+            <h2 className='filter-title'>Filter Data</h2>
+            <div className='filter-form'>
                 <label>
-                Number of impressions: <br></br>
+                Impressions: <br></br>
                     <select value={form.impressions} name='impressions' onChange={handleChange}>
                         <option value=''>None</option>
                         <option value='700'>700+</option>
@@ -57,7 +45,7 @@ function Form({updateData}) {
                     </select>
                 </label>
                 <label>
-                Clicks per product: <br></br>
+                Clicks: <br></br>
                     <select value={form.clicks} name='clicks' onChange={handleChange}>
                         <option value=''>None</option>
                         <option value='100'>100+</option>
@@ -86,20 +74,38 @@ function Form({updateData}) {
                         })}
                     </select>
                 </label>
-                <div className='dateRange'>
-                    <p style={{marginTop: 0}}>Date Range:</p>
+                <div className='date-range'>
+                    <p style={{marginTop: 0, marginBottom: '5%'}}>Date Range:</p>
                     <label for='startDate'>Start</label>    
-                    <input type='date' id='startDate' name='start' value={form.start} min='2021-04-01' max='2021-04-05' onChange={handleChange}></input>
-                    {form.start.length > 0 && <> 
+                    <input 
+                    type='date' 
+                    id='startDate' 
+                    name='start' 
+                    value={form.start} 
+                    min='2021-04-01' 
+                    max='2021-04-05' 
+                    onChange={handleChange}
+                    >
+                    </input>
+                    {form.start.length > 0 && 
+                    <> 
                     <label for='endDate'>End</label> 
-                    <input type='date' id='endDate' name='end' value={form.end} min={addDay(form.start)} max='2021-04-05' onChange={handleChange}></input>
-                    </>
-                    }
+                    <input 
+                    type='date' 
+                    id='endDate' 
+                    name='end' 
+                    value={form.end} 
+                    min={addDay(form.start)} 
+                    max='2021-04-05' 
+                    onChange={handleChange}
+                    >
+                    </input>
+                    </>}
                 </div>
             </div>
-        <button className='filterSubmit' onClick={handleClick}>Submit</button>
+            <button className='filter-submit' onClick={handleClick}>Submit</button>
         </form>
     )
-}
+};
 
 export default Form;
