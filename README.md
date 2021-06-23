@@ -11,6 +11,13 @@
 * Knex.js
 * PostgreSQL
 
+![Table Screenshot](https://user-images.githubusercontent.com/69489633/123033064-5808c880-d3a4-11eb-9541-cbc45b0f8cea.png)
+![Chart Screenshot](https://user-images.githubusercontent.com/69489633/123033141-78d11e00-d3a4-11eb-8303-4c655245145d.png)
+![Table Screenshot](https://user-images.githubusercontent.com/69489633/123033217-9dc59100-d3a4-11eb-81f7-7a0a0fa833a8.png)
+![Chart Screenshot](https://user-images.githubusercontent.com/69489633/123033257-b5047e80-d3a4-11eb-8454-2a1d95d08a6c.png)
+
+
+
 ---
 
 # Original Task Assignment
