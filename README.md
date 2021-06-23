@@ -1,5 +1,8 @@
 # Adcellerant Code Challenge
 
+Frontend Repo: https://github.com/camaragon/adcellerant-skills-fe
+Backend Repo: https://github.com/camaragon/adcellerant-skills-be
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Overview
