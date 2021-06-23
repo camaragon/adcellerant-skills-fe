@@ -1,3 +1,7 @@
+---
+
+# Original Task Assignment
+
 ## Introduction
 
 This challenge is full-stack, from database to API to HTML. Try not to focus all of your effort in a single area; we expect to see at least some backend and frontend. We will discuss your work during the on-site interview.
@@ -12,9 +16,9 @@ Frontend: Present an HTML web interface to visualize the data. There is intentio
 
 ## Solution Considerations
 
-● Data should be stored in a database. We use PostgreSQL, but use what makes you comfortable.
-● UI presentation (frameworks and libraries) is mostly up to you, but please use HTML. Some of our tech are React, Node, TypeScript, and GraphQL, but use what makes you comfortable.
-● It is highly preferred that code submissions be Docker ready.
-● Keep in mind that every candidate does the code test, so think of ways to make yourself
+- Data should be stored in a database. We use PostgreSQL, but use what makes you comfortable.
+- UI presentation (frameworks and libraries) is mostly up to you, but please use HTML. Some of our tech are React, Node, TypeScript, and GraphQL, but use what makes you comfortable.
+- It is highly preferred that code submissions be Docker ready.
+- Keep in mind that every candidate does the code test, so think of ways to make yourself
 stand out from the crowd!
-● You have a limited amount of time. Beware of going down rabbit holes.
+- You have a limited amount of time. Beware of going down rabbit holes.
