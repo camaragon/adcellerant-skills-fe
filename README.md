@@ -44,6 +44,19 @@ stand out from the crowd!
 * Knex.js
 * PostgreSQL
 
+This codebase is Docker ready. The PostgreSQL database will need a container `docker run --rm -it --name <desired-container-name> -e POSTGRES_PASSWORD=password -p 1234:1234 postgres`. To migrate and seed the database run `npx knex migrate:latest --knexfile knexfile.js` and `npx knex seed:run`.
+<br>
+<br>
+To run the frontend use:
+```
+$ docker run -it --rm \
+-v ${PWD}:/app \
+-v /app/node_modules \
+-p 3001:3000 \
+-e CHOKIDAR_USEPOLLING=true \
+<container-name>
+```
+
 ![Table Screenshot](https://user-images.githubusercontent.com/69489633/123033064-5808c880-d3a4-11eb-9541-cbc45b0f8cea.png)
 ![Chart Screenshot](https://user-images.githubusercontent.com/69489633/123033141-78d11e00-d3a4-11eb-8303-4c655245145d.png)
 ![Table Screenshot](https://user-images.githubusercontent.com/69489633/123033217-9dc59100-d3a4-11eb-81f7-7a0a0fa833a8.png)
