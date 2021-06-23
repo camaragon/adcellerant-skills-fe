@@ -1,70 +1,20 @@
-# Getting Started with Create React App
+## Introduction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This challenge is full-stack, from database to API to HTML. Try not to focus all of your effort in a single area; we expect to see at least some backend and frontend. We will discuss your work during the on-site interview.
+You have 5 days – including weekends – to complete as much as you can. Early submissions are welcome if you finish quickly, or you might also prefer to add extra features or tests.
 
-## Available Scripts
+## Summary
 
-In the project directory, you can run:
+Imagine you run advertisements for various products sold by your imaginary company. Your team is very interested in gathering advertising analytics to gauge product interest in the marketplace.
+Problem Statement
+Backend: We’ve provided sample data to imitate advertising analytic data. Your application needs to serve the provided data via API. It’s up to you how to store and serve the data. Think about how a frontend application would want to consume the data. Many enterprise APIs support filtering and sorting, for instance. Feel free to add to the provided data if you wish.
+Frontend: Present an HTML web interface to visualize the data. There is intentionally a large range of interpretation here. You could render a table, charts, both, or neither. Use your imagination. Think about usability. How would users filter or sort? Users may want to see the number of impressions or clicks per product, per source, for a date range, or some combination of it all.
 
-### `npm start`
+## Solution Considerations
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+● Data should be stored in a database. We use PostgreSQL, but use what makes you comfortable.
+● UI presentation (frameworks and libraries) is mostly up to you, but please use HTML. Some of our tech are React, Node, TypeScript, and GraphQL, but use what makes you comfortable.
+● It is highly preferred that code submissions be Docker ready.
+● Keep in mind that every candidate does the code test, so think of ways to make yourself
+stand out from the crowd!
+● You have a limited amount of time. Beware of going down rabbit holes.
