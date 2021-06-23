@@ -44,10 +44,10 @@ function Form({updateData}) {
 
     return (
         <form>
-            <h2>Filter Data</h2>
-            <div className='filterForm'>
+            <h2 className='filter-title'>Filter Data</h2>
+            <div className='filter-form'>
                 <label>
-                Number of impressions: <br></br>
+                Impressions: <br></br>
                     <select value={form.impressions} name='impressions' onChange={handleChange}>
                         <option value=''>None</option>
                         <option value='700'>700+</option>
@@ -57,7 +57,7 @@ function Form({updateData}) {
                     </select>
                 </label>
                 <label>
-                Clicks per product: <br></br>
+                Clicks: <br></br>
                     <select value={form.clicks} name='clicks' onChange={handleChange}>
                         <option value=''>None</option>
                         <option value='100'>100+</option>
@@ -87,7 +87,7 @@ function Form({updateData}) {
                     </select>
                 </label>
                 <div className='dateRange'>
-                    <p style={{marginTop: 0}}>Date Range:</p>
+                    <p style={{marginTop: 0, marginBottom: '5%'}}>Date Range:</p>
                     <label for='startDate'>Start</label>    
                     <input type='date' id='startDate' name='start' value={form.start} min='2021-04-01' max='2021-04-05' onChange={handleChange}></input>
                     {form.start.length > 0 && <> 
