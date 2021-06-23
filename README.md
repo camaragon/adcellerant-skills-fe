@@ -4,6 +4,7 @@
 
 * JavaScript
 * React
+* CSS
 * Chart.js
 * Node.js
 * Express.js
