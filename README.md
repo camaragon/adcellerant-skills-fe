@@ -5,7 +5,8 @@ Backend Repo: https://github.com/camaragon/adcellerant-skills-be
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![Table Screenshot](https://user-images.githubusercontent.com/69489633/123033064-5808c880-d3a4-11eb-9541-cbc45b0f8cea.png)
+![Table Screenshot](https://user-images.githubusercontent.com/69489633/123150972-33523680-d420-11eb-9c77-be5bb22d00fc.png)
+
 
 ## Overview
 
@@ -35,7 +36,8 @@ stand out from the crowd!
 
 ---
 
-![Chart Screenshot](https://user-images.githubusercontent.com/69489633/123033141-78d11e00-d3a4-11eb-8303-4c655245145d.png)
+![Chart Screenshot](https://user-images.githubusercontent.com/69489633/123151558-cf7c3d80-d420-11eb-99bb-01758d8623e0.png)
+
 
 ### Technologies Used
 
@@ -65,5 +67,5 @@ $ docker run -it --rm \
 -e CHOKIDAR_USEPOLLING=true \
 <container-name>
 ```
-![Table Screenshot](https://user-images.githubusercontent.com/69489633/123033217-9dc59100-d3a4-11eb-81f7-7a0a0fa833a8.png)
-![Chart Screenshot](https://user-images.githubusercontent.com/69489633/123033257-b5047e80-d3a4-11eb-8454-2a1d95d08a6c.png)
+![Table Screenshot](https://user-images.githubusercontent.com/69489633/123151232-7dd3b300-d420-11eb-9207-b7d1244b0ac8.png)
+![Chart Screenshot](https://user-images.githubusercontent.com/69489633/123151329-90e68300-d420-11eb-8417-67c731759bbf.png)
