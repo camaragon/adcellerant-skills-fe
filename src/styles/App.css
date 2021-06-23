@@ -11,8 +11,24 @@ header {
   align-items: center;
 }
 
-.filterReset {
+h3 {
+  border-bottom: 3px solid #FA6700
 }
+
+.filterReset {
+  border-radius: 5px;
+  background-color: #FA6700;
+  padding: 15px;
+  color: #fff;
+  text-align: center;
+  border: none;
+}
+
+.filterReset:hover {
+  background-color: #fab761;
+  cursor: pointer;
+}
+
 
 .pages {
   height: 80px;
