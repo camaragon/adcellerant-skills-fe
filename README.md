@@ -1,4 +1,4 @@
-# Adcellerant Code Challenge
+# AdCellerant Code Challenge - FE Repo
 
 Frontend Repo: https://github.com/camaragon/adcellerant-skills-fe <br>
 Backend Repo: https://github.com/camaragon/adcellerant-skills-be
