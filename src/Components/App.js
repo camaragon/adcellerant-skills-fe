@@ -43,7 +43,7 @@ function App() {
   return (
     <>
       <header>
-        <h1>Advertsing Analytics</h1>
+        <h1>Advertising Analytics</h1>
          <div className='pages'>
            <Link to={'/'} style={{textDecoration: 'none'}}><p className='display-buttons'>Table</p></Link>
            <Link to={'/charts'} style={{textDecoration: 'none'}}><p className='display-buttons'>Chart</p></Link>
