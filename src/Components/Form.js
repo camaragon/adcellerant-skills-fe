@@ -23,12 +23,12 @@ function Form({updateData}) {
         const result = new Date(date);
         result.setDate(result.getDate() + 1)
         return result.toISOString().slice(0, 10);
-    }
+    };
 
     const handleClick = (event) => {
         event.preventDefault();
         updateData(form) 
-    }
+    };
 
     return (
         <form>
@@ -106,6 +106,6 @@ function Form({updateData}) {
             <button className='filter-submit' onClick={handleClick}>Submit</button>
         </form>
     )
-}
+};
 
 export default Form;

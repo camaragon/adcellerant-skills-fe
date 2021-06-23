@@ -10,11 +10,6 @@ table {
     width: 85%;
 }
 
-.table-title {
-    border-bottom: 6px solid #FA6700 !important;
-    margin-top: 3%;
-}
-
 h2 {
     border-bottom: 6px solid #FA6700;
 }
@@ -22,4 +17,9 @@ h2 {
 th {
     padding-top: 12px;
     padding-bottom: 12px;
+}
+
+.table-title {
+    border-bottom: 6px solid #FA6700;
+    margin-top: 3%;
 }
