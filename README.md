@@ -1,3 +1,13 @@
+### Technologies Used
+
+* JavaScript
+* React
+* Chart.js
+* Node.js
+* Express.js
+* Knex.js
+* PostgreSQL
+
 ---
 
 # Original Task Assignment
